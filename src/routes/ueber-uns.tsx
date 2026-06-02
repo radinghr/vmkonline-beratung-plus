@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { ArrowRight } from "lucide-react";
+import bueroImg from "@/assets/buero.jpg";
 
 export const Route = createFileRoute("/ueber-uns")({
   head: () => ({
