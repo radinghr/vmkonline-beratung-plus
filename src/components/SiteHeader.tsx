@@ -1,13 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
+import logo from "@/assets/vmk-logo.asset.json";
 
 const nav = [
   { to: "/", label: "Startseite" },
   { to: "/ueber-uns", label: "Über uns" },
   { to: "/leistungen", label: "Leistungen" },
   { to: "/faq", label: "FAQ" },
-  { to: "/blog", label: "Blog" },
   { to: "/kontakt", label: "Kontakt" },
 ];
 
@@ -16,8 +16,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-md">
       <div className="container-page flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5">
-          <span className="grid h-9 w-9 place-items-center rounded-md bg-primary text-primary-foreground font-display text-sm font-semibold">VMK</span>
+        <Link to="/" className="flex items-center gap-3">
+          <img src={logo.url} alt="VMK Berlin GmbH" className="h-9 w-auto" width={72} height={36} />
           <span className="hidden sm:block text-sm font-medium tracking-tight">VMK Berlin GmbH</span>
         </Link>
 
@@ -36,6 +36,13 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
+          <a
+            href="tel:+493032304332"
+            className="hidden md:inline-flex items-center gap-2 text-sm text-foreground hover:text-primary transition"
+          >
+            <Phone className="h-4 w-4" strokeWidth={1.6} />
+            030 32304332
+          </a>
           <Link
             to="/kontakt"
             className="hidden sm:inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition"
@@ -65,6 +72,9 @@ export function SiteHeader() {
                 {n.label}
               </Link>
             ))}
+            <a href="tel:+493032304332" className="py-2.5 text-sm text-primary font-medium">
+              030 32304332
+            </a>
           </nav>
         </div>
       )}
