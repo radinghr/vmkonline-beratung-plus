@@ -69,14 +69,14 @@ function Contact() {
             </li>
             <li className="flex gap-4">
               <Phone className="h-5 w-5 text-primary shrink-0 mt-0.5" strokeWidth={1.5} />
-              <div className="text-muted-foreground">Termin nach Vereinbarung</div>
+              <a href="tel:+493032304332" className="text-foreground hover:text-primary font-medium">030 32304332</a>
             </li>
           </ul>
 
           <div className="mt-10 p-6 rounded-lg bg-surface border border-border">
             <div className="text-sm font-medium text-foreground">Unabhängig &amp; transparent</div>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-              Die Erstberatung ist für Sie kostenfrei. Wir empfehlen ohne Bindung an eine Gesellschaft.
+              Die Erstberatung ist für Sie kostenfrei. Wir empfehlen ohne Bindung an eine Gesellschaft. Beratung auf Deutsch &amp; Englisch möglich.
             </p>
           </div>
         </div>
