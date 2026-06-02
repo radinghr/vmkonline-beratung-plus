@@ -14,7 +14,6 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as LeistungenRouteImport } from './routes/leistungen'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as FaqRouteImport } from './routes/faq'
-import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
 
 const UeberUnsRoute = UeberUnsRouteImport.update({
@@ -42,11 +41,6 @@ const FaqRoute = FaqRouteImport.update({
   path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogRoute = BlogRouteImport.update({
-  id: '/blog',
-  path: '/blog',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -55,7 +49,6 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/blog': typeof BlogRoute
   '/faq': typeof FaqRoute
   '/kontakt': typeof KontaktRoute
   '/leistungen': typeof LeistungenRoute
@@ -64,7 +57,6 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/blog': typeof BlogRoute
   '/faq': typeof FaqRoute
   '/kontakt': typeof KontaktRoute
   '/leistungen': typeof LeistungenRoute
@@ -74,7 +66,6 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/blog': typeof BlogRoute
   '/faq': typeof FaqRoute
   '/kontakt': typeof KontaktRoute
   '/leistungen': typeof LeistungenRoute
@@ -85,25 +76,16 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/blog'
     | '/faq'
     | '/kontakt'
     | '/leistungen'
     | '/sitemap.xml'
     | '/ueber-uns'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/blog'
-    | '/faq'
-    | '/kontakt'
-    | '/leistungen'
-    | '/sitemap.xml'
-    | '/ueber-uns'
+  to: '/' | '/faq' | '/kontakt' | '/leistungen' | '/sitemap.xml' | '/ueber-uns'
   id:
     | '__root__'
     | '/'
-    | '/blog'
     | '/faq'
     | '/kontakt'
     | '/leistungen'
@@ -113,7 +95,6 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  BlogRoute: typeof BlogRoute
   FaqRoute: typeof FaqRoute
   KontaktRoute: typeof KontaktRoute
   LeistungenRoute: typeof LeistungenRoute
@@ -158,13 +139,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog': {
-      id: '/blog'
-      path: '/blog'
-      fullPath: '/blog'
-      preLoaderRoute: typeof BlogRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -177,7 +151,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  BlogRoute: BlogRoute,
   FaqRoute: FaqRoute,
   KontaktRoute: KontaktRoute,
   LeistungenRoute: LeistungenRoute,

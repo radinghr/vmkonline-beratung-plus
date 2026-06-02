@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { ArrowRight } from "lucide-react";
+import bueroImg from "@/assets/buero.jpg";
 
 export const Route = createFileRoute("/ueber-uns")({
   head: () => ({
@@ -31,6 +32,17 @@ function About() {
         title="Beratung statt Verkauf."
         lead="Die VMK Berlin GmbH ist ein unabhängiger Versicherungsmakler mit Sitz in Berlin. Wir beraten Privatkunden in ganz Deutschland – persönlich, transparent und auf Augenhöhe."
       />
+
+      <section className="container-page pt-16 md:pt-20">
+        <img
+          src={bueroImg}
+          alt="Büro der VMK Berlin GmbH"
+          width={1280}
+          height={896}
+          loading="lazy"
+          className="rounded-2xl w-full h-auto shadow-[var(--shadow-elevated)]"
+        />
+      </section>
 
       <section className="container-page py-20 md:py-28 grid lg:grid-cols-[1fr_1.3fr] gap-16">
         <div>

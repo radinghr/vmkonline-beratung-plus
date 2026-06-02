@@ -1,17 +1,19 @@
 import { Link } from "@tanstack/react-router";
+import logo from "@/assets/vmk-logo.asset.json";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-surface mt-24">
       <div className="container-page py-14 grid gap-10 md:grid-cols-4">
         <div className="md:col-span-2">
-          <div className="flex items-center gap-2.5">
-            <span className="grid h-9 w-9 place-items-center rounded-md bg-primary text-primary-foreground font-display text-sm font-semibold">VMK</span>
+          <div className="flex items-center gap-3">
+            <img src={logo.url} alt="VMK Berlin GmbH" className="h-10 w-auto" width={80} height={40} />
             <span className="text-sm font-medium tracking-tight">VMK Berlin GmbH</span>
           </div>
           <p className="mt-4 text-sm text-muted-foreground max-w-sm">
             Unabhängiger Versicherungsmakler aus Berlin. Beratung, die zu Ihrem Leben passt – nicht zu einer Gesellschaft.
           </p>
+          <p className="mt-3 text-xs text-muted-foreground">Beratung auf Deutsch & Englisch möglich.</p>
         </div>
 
         <div>
@@ -20,7 +22,6 @@ export function SiteFooter() {
             <li><Link to="/leistungen" className="hover:text-foreground">Leistungen</Link></li>
             <li><Link to="/ueber-uns" className="hover:text-foreground">Über uns</Link></li>
             <li><Link to="/faq" className="hover:text-foreground">FAQ</Link></li>
-            <li><Link to="/blog" className="hover:text-foreground">Blog</Link></li>
             <li><Link to="/kontakt" className="hover:text-foreground">Kontakt</Link></li>
           </ul>
         </div>
@@ -31,7 +32,8 @@ export function SiteFooter() {
             VMK Berlin GmbH<br />
             Quellweg 27<br />
             13629 Berlin<br />
-            Deutschland
+            Deutschland<br />
+            <a href="tel:+493032304332" className="mt-2 inline-block text-foreground hover:text-primary">Tel. 030 32304332</a>
           </address>
         </div>
       </div>

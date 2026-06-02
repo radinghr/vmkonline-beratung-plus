@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Check, Shield, Users, FileSearch, Scale, HeartPulse, Building2, Briefcase, Home, ShieldCheck } from "lucide-react";
+import { ArrowRight, Check, Shield, Users, FileSearch, Scale, HeartPulse, Building2, Briefcase, Home, ShieldCheck, Languages, Phone } from "lucide-react";
 import heroImg from "@/assets/hero-berlin.jpg";
+import beratungImg from "@/assets/beratung.jpg";
 import { SiteLayout } from "@/components/SiteLayout";
 
 export const Route = createFileRoute("/")({
@@ -118,10 +119,10 @@ function Home_() {
           <div className="grid lg:grid-cols-2 gap-12 items-end mb-14">
             <div>
               <div className="eyebrow">Leistungen</div>
-              <h2 className="mt-3 text-3xl md:text-5xl">Alle Versicherungs­bereiche aus einer Hand.</h2>
+              <h2 className="mt-3 text-3xl md:text-5xl">Wir bieten alles an – hier ein paar Beispiele.</h2>
             </div>
             <p className="text-muted-foreground text-lg leading-relaxed lg:max-w-md">
-              Viele unserer Kunden kommen wegen einer Versicherung – und bleiben, weil sie entdecken, dass wir alle Bereiche abdecken.
+              Unser Spektrum deckt sämtliche Versicherungsbereiche ab. Viele Kunden kommen wegen einer Versicherung – und bleiben, weil sie entdecken, dass wir alle Bereiche abdecken.
             </p>
           </div>
 
@@ -140,6 +141,43 @@ function Home_() {
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
               </Link>
             ))}
+          </div>
+
+          <div className="mt-10 text-center text-sm text-muted-foreground">
+            Und vieles mehr – sprechen Sie uns an.{" "}
+            <Link to="/leistungen" className="text-primary font-medium hover:underline">Alle Leistungen ansehen →</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* IMAGE + LANGUAGES */}
+      <section className="container-page py-24 md:py-32 grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <img
+            src={beratungImg}
+            alt="Persönliche Versicherungsberatung bei VMK Berlin"
+            width={1280}
+            height={896}
+            loading="lazy"
+            className="rounded-2xl w-full h-auto shadow-[var(--shadow-elevated)]"
+          />
+        </div>
+        <div>
+          <div className="eyebrow">Persönlich · Mehrsprachig</div>
+          <h2 className="mt-3 text-3xl md:text-4xl">Beratung auf Deutsch &amp; Englisch.</h2>
+          <p className="mt-5 text-muted-foreground text-lg leading-relaxed">
+            Ob Sie in Berlin neu sind oder Ihre Versicherungen lieber in Ihrer Muttersprache besprechen – wir beraten Sie kompetent auf Deutsch und auf Englisch.
+          </p>
+          <p className="mt-3 text-muted-foreground leading-relaxed">
+            We are happy to advise you in English as well – just give us a call.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm">
+              <Languages className="h-4 w-4 text-primary" /> Deutsch · English
+            </span>
+            <a href="tel:+493032304332" className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-4 py-2 text-sm font-medium">
+              <Phone className="h-4 w-4" /> 030 32304332
+            </a>
           </div>
         </div>
       </section>
