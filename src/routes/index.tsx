@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Shield, Users, FileSearch, Scale, HeartPulse, Building2, Briefcase, Home, ShieldCheck, Languages, Phone } from "lucide-react";
-import heroImg from "@/assets/hero-berlin.jpg";
 import beratungImg from "@/assets/beratung.jpg";
+import heroConsultingImg from "@/assets/hero-consulting.jpg.asset.json";
 import { SiteLayout } from "@/components/SiteLayout";
 
 export const Route = createFileRoute("/")({
