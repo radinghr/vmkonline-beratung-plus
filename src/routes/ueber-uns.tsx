@@ -33,6 +33,17 @@ function About() {
         lead="Die VMK Berlin GmbH ist ein unabhängiger Versicherungsmakler mit Sitz in Berlin. Wir beraten Privatkunden in ganz Deutschland – persönlich, transparent und auf Augenhöhe."
       />
 
+      <section className="container-page pt-16 md:pt-20">
+        <img
+          src={bueroImg}
+          alt="Büro der VMK Berlin GmbH"
+          width={1280}
+          height={896}
+          loading="lazy"
+          className="rounded-2xl w-full h-auto shadow-[var(--shadow-elevated)]"
+        />
+      </section>
+
       <section className="container-page py-20 md:py-28 grid lg:grid-cols-[1fr_1.3fr] gap-16">
         <div>
           <div className="eyebrow">Unser Selbstverständnis</div>
