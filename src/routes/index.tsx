@@ -89,7 +89,7 @@ function Home_() {
             ["100 %", "Unabhängig"],
             ["50+", "Gesellschaften im Vergleich"],
             ["Berlin", "Lokaler Ansprechpartner"],
-            ["DE-weit", "Privatkunden betreut"],
+            ["DE-weit", "Privat- & Gewerbekunden betreut"],
           ].map(([k, v]) => (
             <div key={v}>
               <div className="font-display text-2xl md:text-3xl text-foreground">{k}</div>
