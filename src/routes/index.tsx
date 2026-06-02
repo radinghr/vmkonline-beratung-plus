@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Shield, Users, FileSearch, Scale, HeartPulse, Building2, Briefcase, Home, ShieldCheck, Languages, Phone } from "lucide-react";
-import heroImg from "@/assets/hero-berlin.jpg";
 import beratungImg from "@/assets/beratung.jpg";
+import heroConsultingImg from "@/assets/hero-consulting.jpg.asset.json";
 import { SiteLayout } from "@/components/SiteLayout";
 
 export const Route = createFileRoute("/")({
@@ -40,40 +40,43 @@ function Home_() {
   return (
     <SiteLayout>
       {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div
-          className="absolute inset-0 -z-10"
-          style={{
-            backgroundImage: `linear-gradient(135deg, oklch(0.38 0.13 255 / 0.92), oklch(0.22 0.08 260 / 0.85)), url(${heroImg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <div className="container-page py-24 md:py-36 text-primary-foreground">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs tracking-wider uppercase">
-              <span className="h-1.5 w-1.5 rounded-full bg-white" />
-              Unabhängiger Versicherungsmakler · Berlin
+      <section className="relative overflow-hidden bg-surface border-b border-border">
+        <div className="container-page py-16 md:py-24">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs tracking-wider uppercase text-primary">
+                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                Unabhängiger Versicherungsmakler · Berlin
+              </div>
+              <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-display leading-[1.05] text-foreground">
+                Unabhängige Versicherungs­beratung in Berlin
+              </h1>
+              <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
+                Wir vergleichen für Sie Versicherungen aller Gesellschaften und finden die Lösung, die wirklich zu Ihnen passt.
+              </p>
+              <div className="mt-10 flex flex-wrap gap-3">
+                <Link
+                  to="/kontakt"
+                  className="inline-flex items-center gap-2 rounded-md bg-primary text-primary-foreground px-6 py-3.5 text-sm font-medium hover:bg-primary/90 transition"
+                >
+                  Jetzt beraten lassen <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  to="/leistungen"
+                  className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-6 py-3.5 text-sm font-medium hover:bg-surface transition"
+                >
+                  Unsere Leistungen
+                </Link>
+              </div>
             </div>
-            <h1 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-display leading-[1.05]">
-              Unabhängige Versicherungs­beratung in Berlin
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
-              Wir vergleichen für Sie Versicherungen aller Gesellschaften und finden die Lösung, die wirklich zu Ihnen passt.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Link
-                to="/kontakt"
-                className="inline-flex items-center gap-2 rounded-md bg-white text-primary px-6 py-3.5 text-sm font-medium hover:bg-white/90 transition"
-              >
-                Jetzt beraten lassen <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                to="/leistungen"
-                className="inline-flex items-center gap-2 rounded-md border border-white/30 px-6 py-3.5 text-sm font-medium hover:bg-white/10 transition"
-              >
-                Unsere Leistungen
-              </Link>
+            <div className="relative">
+              <img
+                src={heroConsultingImg.url}
+                alt="Persönliche Versicherungsberatung bei VMK Berlin"
+                width={1024}
+                height={768}
+                className="rounded-2xl w-full h-auto shadow-[var(--shadow-elevated)]"
+              />
             </div>
           </div>
         </div>
@@ -86,7 +89,7 @@ function Home_() {
             ["100 %", "Unabhängig"],
             ["50+", "Gesellschaften im Vergleich"],
             ["Berlin", "Lokaler Ansprechpartner"],
-            ["DE-weit", "Privatkunden betreut"],
+            ["DE-weit", "Privat- & Gewerbekunden betreut"],
           ].map(([k, v]) => (
             <div key={v}>
               <div className="font-display text-2xl md:text-3xl text-foreground">{k}</div>
